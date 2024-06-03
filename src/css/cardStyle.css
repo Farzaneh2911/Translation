@@ -1,0 +1,996 @@
+
+  .gray-filter {
+    filter: grayscale(100%)brightness(132%); /* Convert image to grayscale */
+  }
+  
+  
+  
+  
+ 
+   
+  
+  
+ 
+    
+ 
+
+  
+  
+  
+  
+  
+ 
+  
+  
+ 
+  
+  /* Add responsive styles as necessary */
+  @media (max-width: 768px) {
+    .radio-group {
+      flex-direction: column;
+    }
+  }
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    
+    justify-content: space-between;
+  }
+  
+  .input-group {
+    flex: 1 1 calc(50% - 10px); /* Minimum width of 280px before wrapping */
+    
+
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-info {
+      gap: 10px; /* Smaller gap for smaller screens, if needed */
+    }
+  }  
+  .translation-languages .language-selectors {
+    display: flex;
+    justify-content: space-between; /* Adjust based on your design needs */
+    gap: 20px; /* Space between the two selectors */
+  }
+  
+  .input-group {
+    flex: 1; /* Each input group will take up equal space */
+  }
+  
+  @media (max-width: 768px) {
+    .translation-languages .language-selectors {
+      flex-direction: column;
+    }
+  
+    .input-group {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  /* Container for all service options */
+
+
+/* Individual service card styling */
+
+
+
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.service-card ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.service-card .price {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.service-card .price span {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.service-card button {
+  background: #4CAF50; /* Adjust to match your theme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.service-card button:hover {
+  background: #45a049;
+}
+
+.service-card button + button {
+  margin-top: 10px; /* Space between buttons if you have multiple */
+}
+@media (max-width: 768px) {
+  .service-card {
+    flex: 0 1 calc(50% - 20px); /* Adjust to 50% for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    flex: 0 1 100%; /* Full width for very small screens */
+  }
+}
+/* Add to your main CSS file */
+.rbc-day-bg:hover {
+  background-color: #e8f0fe; /* Light blue background on hover */
+  cursor: pointer;
+}
+
+.rbc-selected {
+  background-color: #d0e2ff; /* Deeper blue for selected day */
+}
+
+/* Add to your main CSS file */
+.time-slots-container {
+  margin-top: 20px;
+  
+}
+
+.time-slot-button {
+  display: block;
+  padding: 10px 20px;
+  margin: 5px 0;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.time-slot-button:hover {
+  background-color: #e0e0e0;
+}
+.calendar-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 20px;
+}
+
+.calendar {
+  flex: 1; 
+  flex-grow: 2; /* Adjust size as needed */
+}
+
+.time-slot {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-slot.time-slot.available:hover {
+  transform: translateY(-3px);
+  border-color: green;
+  box-shadow: #263e80;
+  border-width: 2px;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.time-slot {
+  animation: fadeIn 0.5s ease-out;
+}
+.Snackbar {
+  background-color: #333; /* Dark background for contrast */
+  color: white; /* White text */
+}
+.time-slots {
+   /* Smaller area for the time slots */
+  max-width: 800px; /* Restricts the width of the time slot area */
+  flex: 5; /* Adjust the proportion according to your design preference */
+  padding: 5px;
+ 
+  
+}
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.left-container {
+  flex: 4; /* Adjust the proportion according to your design preference */
+  padding: 5px;
+  border: 5px solid #255b91; /* Optional border */
+  box-shadow: 0px 0px 10px #ccc; 
+  /* Optional shadow for better visibility */
+}
+
+.right-container {
+  flex: 1; /* Adjust the proportion according to your design preference */
+  padding: 5px;
+  background-color: #255b91;
+}
+.time-slot-container {
+  display: flex;
+  align-items: center;
+ 
+  margin-bottom: 10px;
+}
+
+.time-slot {
+  padding: 20px;
+  width: 200px;
+  margin-right: 10px; /* Spacing between time slot and next button */
+  background-color: rgb(250, 246, 246); /* Example color */
+  color: rgb(10, 10, 10);
+  font-weight: bold;
+  cursor: pointer;
+  transition: width 0.3s ease-in-out;
+  
+}
+
+.time-slot.selected {
+  background-color: #666;
+  flex-grow: 0;  /* Darker color for selected slot */
+  transition: 0.3s ease-in-out;
+}
+
+.next-button {
+  padding: 10px;
+  width: 0; /* Start with no width */
+  overflow: hidden; /* Hide content when width is 0 */
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Smooth transition for width changes */
+  transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;  /* Ensures content is centered */
+  
+}
+
+.time-slot-container.selected .time-slot{
+  width: 100px;
+}
+.time-slot-container.selected .next-button {
+  width: 100px;
+  padding: 20px; /* When selected, each gets half of the total width */
+}
+.MuiMenu-paper {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform-origin: top center;
+}
+/* Add this to your CSS file, e.g., translationpage.css */
+
+.img-style {
+  cursor: pointer;
+  background-color: white;
+  padding: 60px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border-radius: 12px;
+  transition: transform 0.15s ease-out;
+}
+
+@keyframes floatzoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate {
+  animation: floatzoom 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* StudentPromotion.css */
+.promotion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  position: relative;
+  animation: floatzoom 0.5s ease, pulse 2s infinite;
+  transition: all 0.5s ease;
+  margin-top: 10;
+}
+
+.promotion-content {
+  display: flex;
+  align-items: center;
+}
+
+.promotion-image {
+  max-width: 150px;
+  margin-right: 20px;
+}
+
+.promotion-text h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  margin: 0;
+  color: #000080;
+}
+
+.promotion-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  color: #000080;
+}
+
+@keyframes floatzoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    border-color: #00bfff;
+  }
+  50% {
+    border-color: #ff4500;
+  }
+  100% {
+    border-color: #00bfff;
+  }
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .promotion-container {
+    flex-direction: column;
+    text-align: center;
+    
+  }
+
+  .promotion-image {
+    margin: 0 0 20px 0;
+  }
+}
+.signin-page {
+  background-color: #f6f5f5;
+  height: 100vh;
+  animation: fadein 0.35s ease;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.ecommerce-logo {
+  width: 160px;
+}
+
+.login-navbar {
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  justify-content: space-between;
+}
+
+.signup-btn,
+.signin-btn {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(45, 108, 119);
+  padding: 12px;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  border-radius: 7px;
+}
+
+.signin-btn {
+  margin-top: 25px;
+}
+
+.signin-btn:hover,
+.signup-btn:hover {
+  background-color: rgb(140, 0, 255);
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.some-text {
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.main-form {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 30vw;
+  padding-bottom: 22px;
+  /* width: max-content; */
+}
+
+.main-form2 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 32vw;
+  padding-bottom: 22px;
+
+}
+
+.background {
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 60px;
+  justify-content: space-between;
+}
+
+.BG1,
+.BG2 {
+  width: 40vw;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+.user {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 35px;
+}
+
+.user-desc {
+  font-family: "Poppins", sans-serif;
+  width: 300px;
+}
+
+.or {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 600;
+}
+
+.email,
+.password,
+.name {
+  height: 35px;
+  width: 350px;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+  outline: none;
+  border: 1px solid rgba(175, 175, 175, 0.678);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.extra-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1.5px solid rgba(175, 175, 175, 0.678);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.724);
+  font-size: 18px;
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.google:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.google-img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.error-message {
+  margin-top: 10px;
+  width: 85%;
+  font-family: "Poppins", sans-serif;
+  color: red;
+  font-size: 14px;
+}
+
+/* MEDIA QUERIES  */
+
+@media (max-width: 1200px) {
+  .BG1,
+  .BG2 {
+    position: relative;
+    top: 7vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .BG1,
+  .BG2 {
+    position: relative;
+    top: 12vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .BG1,
+  .BG2 {
+    opacity: 0;
+  }
+
+  .main-form {
+    bottom: 25vw;
+  }
+
+  .main-form2 {
+    bottom: 26vw;
+  }
+}
+
+@media (max-width: 530px) {
+  .login-form {
+    padding: 30px;
+  }
+
+  .main-form {
+    bottom: 17vw;
+  }
+  .main-form2 {
+    bottom: 24vw;
+  }
+}
+
+@media (max-width: 460px) {
+  .main-form {
+    bottom: 20vw;
+  }
+  .signup-btn,
+  .signin-btn {
+    padding: 8px;
+  }
+  .main-form2 {
+    bottom: 20vw;
+  }
+  .login-navbar {
+    padding-left: 25px;
+    padding-right: 25px;
+    justify-content: space-between;
+  }
+  .ecommerce-logo {
+    width: 110px;
+  }
+  .email,
+  .password,
+  .name {
+    width: 260px;
+  }
+  .user {
+    font-size: 30px;
+  }
+  .user-desc {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-form {
+    bottom: 12vw;
+  }
+  .main-form2 {
+    bottom: 10vw;
+  }
+
+  .email,
+  .password,
+  .name {
+    width: 220px;
+  }
+  .login-form {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media (max-width: 350px) {
+  .signin-page {
+    background-color: white;
+    padding-top: 20px;
+  }
+  .login-form {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 310px) {
+  .email,
+  .password,
+  .name {
+    width: 205px;
+  }
+
+  .main-form2 {
+    bottom: 14vw;
+  }
+
+  .some-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-desc {
+    width: 75%;
+  }
+}
+.credit-body {
+  cursor: pointer;
+  background-image: url("../imgs/world.png"),
+    linear-gradient(
+      74deg,
+      rgba(26, 141, 235, 0.81) 11.32%,
+      rgb(55, 95, 68) 100%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: color-burn;
+  height: 200px;
+  display: flex;
+  width: 360px; /* Increased width */
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  border-radius: 14px;
+  transition: transform 0.25s ease-out;
+  margin-top: 40px;
+}
+
+.first-layer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 18px;
+}
+
+.credit-chip {
+  position: relative;
+  right: 34px;
+  width: 110px;
+}
+
+.card-company {
+  width: 50px;
+  transition: all 0.8s ease;
+}
+
+.middle-layer {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.account-number,
+.holder-name,
+.cvv-number,
+.exp-date {
+  font-family: 'Credit-Card', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 20px;
+  margin-top: 14px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+}
+
+.holder-name {
+  position: absolute;
+  left: 33px;
+  font-size: 17px;
+}
+
+.cvv-number {
+  position: absolute;
+  right: 200px;
+}
+
+.cvv-number,
+.exp-date {
+  font-size: 14px;
+}
+
+.exp-date {
+  position: absolute;
+  right: 200px;
+  top: 260px;
+}
+
+.animation {
+  animation: FadeIn 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes floatzoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate {
+  animation: floatzoom 0.5s ease;
+  transition: all 0.5s ease;
+}
+@media (max-width: 1040px) {
+  .country > input,
+  .user-name > input,
+  .user-contact > input,
+  .user-email > input,
+  .user-address > input,
+  .user-pincode > input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .acc-name > input,
+  .acc-number > input,
+  .acc-cvv > input,
+  .acc-exp > input {
+    width: 275px;
+  }
+}
+
+@media (max-width: 800px) {
+  .country > input,
+  .user-name > input,
+  .user-contact > input,
+  .user-email > input,
+  .user-address > input,
+  .user-pincode > input {
+    width: 220px;
+  }
+}
+
+@media (max-width: 740px) {
+  .acc-name > input,
+  .acc-number > input,
+  .acc-cvv > input,
+  .acc-exp > input {
+    width: 185px;
+  }
+}
+
+@media (max-width: 630px) {
+  .all-data-of-user {
+    flex-direction: column;
+  }
+  .user-data2 {
+    margin-left: 0px;
+  }
+  .all-data-of-card {
+    flex-direction: column;
+  }
+  .card-data2 {
+    margin-left: 0px;
+  }
+  .acc-name > input,
+  .acc-number > input,
+  .acc-cvv > input,
+  .acc-exp > input {
+    width: 285px;
+  }
+}
+
+@media (max-width: 565px) {
+  .credit-body {
+    height: 160px;
+    width: 296px;
+  }
+  .credit-chip {
+    right: 26px;
+    width: 70px;
+  }
+  .card-company {
+    width: 32px;
+  }
+  .first-layer {
+    padding-left: 15px;
+    padding-right: 13px;
+    padding-top: 5px;
+  }
+  .cvv-number,
+  .exp-date {
+    font-size: 11px;
+  }
+  .holder-name {
+    font-size: 12px;
+  }
+  .account-number {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .all-data-of-card {
+    flex-direction: column;
+  }
+  .card-data2 {
+    margin-left: 0px;
+  }
+  .order-place-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .total-amount {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .payment-data {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  .payment-data {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 385px) {
+  .credit-body {
+    transform: scale(0.8);
+  }
+  .credit-body {
+    font-size: 20px;
+  }
+  .choose-option {
+    font-size: 14px;
+  }
+  .card-head-details {
+    font-size: 22px;
+  }
+  .all-data-of-card {
+    font-size: 13px;
+  }
+  .payment-data {
+    width: 70%;
+  }
+  .acc-name > input,
+  .acc-number > input,
+  .acc-cvv > input,
+  .acc-exp > input {
+    width: 215px;
+  }
+}
+
+@media (max-width: 365px) {
+  .country > input,
+  .user-name > input,
+  .user-contact > input,
+  .user-email > input,
+  .user-address > input,
+  .user-pincode > input {
+    width: 180px;
+    height: 28px;
+  }
+  .payment-page {
+    margin: 0 ;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  .acc-name > input,
+  .acc-number > input,
+  .acc-cvv > input,
+  .acc-exp > input {
+    width: 180px;
+  }
+  .total-amount {
+    font-size: 14px;
+  }
+  .main-amount {
+    font-size: 15.5px;
+  }
+  .confirm-btn {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,24 @@
+.calendar-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .calendar {
+    flex: 1;  /* Adjust size as needed */
+  }
+  
+  .time-slots {
+    width: 300px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .time-slot {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
