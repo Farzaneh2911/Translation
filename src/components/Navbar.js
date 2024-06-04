@@ -103,7 +103,7 @@ const Navbar = () => {
 
   return (
     <AppBar position="sticky" color="default" sx={{ color: 'black', backgroundColor: 'white', fontWeight: 'bold' }}>
-      <Container maxWidth="xl">
+      <Container maxWidth="large">
         <Toolbar disableGutters>
           <img src="./images/logo.svg" alt="Company Logo" style={{ width: 120, height: 91, marginRight: '10px' }} onClick={handleLogoClick} />
           <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
