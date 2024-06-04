@@ -6,8 +6,8 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../firebaseInit'; // Ensure Firebase is initialized
 import MenuIcon from '@mui/icons-material/Menu'; // Import the menu icon
-
 import AccountCircle from '@mui/icons-material/AccountCircle';
+
 const pages = ['Services', 'Company', 'Contact'];
 const serviceCategories = {
   Translation: ["Document Translation", "Day Translations", "NAATI Certified Translations"],
@@ -102,7 +102,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="sticky" color="default" sx={{ color: 'black', backgroundColor: 'white', fontWeight: 'bold', width: { lg: '130%' }, margin: 0 }}>
+    <AppBar position="sticky" color="default" sx={{ color: 'black', backgroundColor: 'white', fontWeight: 'bold' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src="./images/logo.svg" alt="Company Logo" style={{ width: 120, height: 91, marginRight: '10px' }} onClick={handleLogoClick} />
