@@ -38,7 +38,7 @@ const features = [
 const FeaturesList = () => {
   return (
     <Box sx={{
-        width: '120%',
+        width: '100%',
         padding: '20px 0',
         backgroundColor: 'white',
         backgroundImage: 'url("/images/why.png")',
@@ -46,12 +46,12 @@ const FeaturesList = () => {
         mt: 10
       }}>
         <Typography
-           variant="h4" component="h2" gutterBottom sx={{fontWeight:'bold', textAlign:'center', mt:5, fontFamily:'Capriola fonts'}}>
-               Why Is Our Interpretation Process<br/>Smooth & Seamless?
+           variant="h4" component="h2" gutterBottom sx={{ fontWeight: 'bold', textAlign: 'center', mt: 5, fontFamily: 'Capriola fonts' }}>
+               Why Is Our Interpretation Process<br />Smooth & Seamless?
         </Typography>
-        <Grid container spacing={2} justifyContent="center" sx={{ maxWidth: 960, mx: 'auto', mt:5, mb:5 }}>  
+        <Grid container spacing={2} justifyContent="center" sx={{ maxWidth: 960, mx: 'auto', mt: 5, mb: 5 }}>  
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={8} lg={4} key={index}>
+            <Grid item xs={12} sm={6} lg={4} key={index}>
               <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'start', px: 1 }}>
                 <img src={feature.icon} alt={feature.title} style={{ width: 60, height: 60, marginRight: 20 }} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>

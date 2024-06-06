@@ -10,7 +10,7 @@ const AboutSection = () => {
   return (
     <Box sx={{
       mt: 4,
-      left: {xs:35, lg:100},
+      left: {xs:20, lg:10},
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

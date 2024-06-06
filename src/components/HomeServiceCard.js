@@ -58,14 +58,14 @@ const ServiceCards=forwardRef((props, ref) => {
     ref={ref}>
     
     <Typography variant="h4" component="h2" gutterBottom sx={{fontWeight:'bold', textAlign:'center', mt:10}}>
-    Explore All Our Language Services
+    Explore All Our Language Services 
     </Typography>
     <Typography
     Typography variant="h6" component="h2" gutterBottom sx={{ textAlign:'center', mt:2, fontFamily:'sans-serif'}}>
     Explore our wide range of tailored language services for diverse global industries,<br></br>ensuring top-notch content delivery. Find your perfect fit today.
     </Typography>
     </Box>
-    <Grid container spacing={2} sx={{ p: 2 }}>
+    <Grid container spacing={2} sx={{ p: 4 }}>
       {services.map((service, index) => (
         <Grid item xs={12} sm={6} lg={4} key={index}> {/* Adjusted for better control over width */}
           <Card sx={{
@@ -80,8 +80,9 @@ const ServiceCards=forwardRef((props, ref) => {
             p: 2
           }}>
             <CardContent sx={{ flexGrow: 1 }}>
+             <Box display="flex" justifyContent="center">
               <img src={service.icon} alt={`${service.title} icon`} style={{ height: 80, marginBottom: 1, marginLeft:100}} />
-                
+             </Box>   
               
               
               <Typography variant="h5" component="h2" gutterBottom>

@@ -25,78 +25,58 @@ const services = [
 
 const InterpretationPlatform = () => {
   return (
-   <>
-    <Box>
-        <Typography gutterBottom variant="h3" component="div" sx={{textAlign:'center', fontWeight:'bold', mt:10, fontFamily:'Capriola fonts'}}>
-          Platforms Through Which We Deliver<br></br>Global Interpretation Services
+    <>
+      <Box>
+        <Typography gutterBottom variant="h3" component="div" sx={{ textAlign: 'center', fontWeight: 'bold', mt: 10, fontFamily: 'Capriola fonts' }}>
+          Platforms Through Which We Deliver<br />Global Interpretation Services
         </Typography>
-        <Typography gutterBottom variant="h4" component="div" sx={{textAlign:'center',fontFamily:'Capriola fonts'}}>
-        We deliver interpretation services with the most extensive remote interpretation platforms, which<br></br>can be used for live, virtual or hybrid events.
+        <Typography gutterBottom variant="h4" component="div" sx={{ textAlign: 'center', fontFamily: 'Capriola fonts' }}>
+          We deliver interpretation services with the most extensive remote interpretation platforms, which<br />can be used for live, virtual or hybrid events.
         </Typography>
+      </Box>
+      <Grid container spacing={2} sx={{ maxWidth: 1200, margin: 'auto', padding: 4 }}>
+        {/* Zoom service on its own row */}
+        <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Card sx={{ width: { xs: '100%', sm: '80%' }, maxWidth: 400, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 2 }}>
+            <CardMedia
+              component="img"
+              sx={{ width: 200, height: 70 }} // Adjust size as needed
+              image={services[0].icon}
+              alt={services[0].title}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {services[0].title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {services[0].description}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
 
-    </Box>
-    <Grid container spacing={2} sx={{ maxWidth: 1200, margin: 'auto', padding: 4 }}>
-      {/* Zoom service on its own row */}
-      <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Card sx={{ width: '120%', maxWidth: 400, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 2 }}>
-          <CardMedia
-            component="img"
-            sx={{ width: 200, height: 70 }} // Reduced size
-            image={services[0].icon}
-            alt={services[0].title}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {services[0].title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {services[0].description}
-            </Typography>
-          </CardContent>
-         
-        </Card>
+        {/* WebEx and Microsoft Teams side by side on the next row */}
+        {services.slice(1).map((service, index) => (
+          <Grid item xs={12} sm={6} key={index} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Card sx={{ width: { xs: '100%', sm: '80%' }, maxWidth: 400, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 2 }}>
+              <CardMedia
+                component="img"
+                sx={{ width: 200, height: 100 }} // Adjust size as needed
+                image={service.icon}
+                alt={service.title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {service.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {service.description}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
       </Grid>
-
-      {/* WebEx and Microsoft Teams side by side on the next row with no gap */}
-      <Grid item xs={6} sx={{ padding: 1, width:60 }}>
-        <Card sx={{ width: '80%',maxWidth: 400, height:'90%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <CardMedia
-            component="img"
-            sx={{ width: 200, height: 100 }}
-            image={services[1].icon}
-            alt={services[1].title}
-          />
-          <CardContent sx={{width: '80%'}}>
-            <Typography gutterBottom variant="h5" component="div">
-              {services[1].title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {services[1].description}
-            </Typography>
-          </CardContent>
-         
-        </Card>
-      </Grid>
-      <Grid item xs={6} sx={{ padding: 1 }}>
-        <Card sx={{ width: '80%', display: 'flex', flexDirection: 'column',height:'90%', alignItems: 'center' }}>
-          <CardMedia
-            component="img"
-            sx={{ width: 100, height: 80 }}
-            image={services[2].icon}
-            alt={services[2].title}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {services[2].title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {services[2].description}
-            </Typography>
-          </CardContent>
-          
-        </Card>
-      </Grid>
-    </Grid>
     </>
   );
 };

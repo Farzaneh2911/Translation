@@ -28,7 +28,7 @@ exports.helloWorld = functions.https.onRequest((req, res) => {
       if (documentSnapshot.empty) {
         throw new Error("Document not found for the provided email");
       }
-      const documentData =documentSnapshot.docs[0].data();
+      const documentData = documentSnapshot.docs[0].data();  
       const htmlContent = `
        <p>Thank you for your order!</p>
        <p><strong>First Name:</strong> ${documentData.firstName}</p>

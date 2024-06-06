@@ -33,7 +33,7 @@ const ReviewSlider = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    autoplay: true,  
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -51,15 +51,25 @@ const ReviewSlider = () => {
   const reviewBoxHeight = "200px"; // Adjust based on your content or dynamically calculate
 
   return (
-    <Box sx={{backgroundColor: 'white', textAlign: 'center',mt:5, width: '100vw',padding: '20px 0',overflowX: 'hidden',backgroundImage: 'url("/images/why.png")',backgroundSize: { xs: 'cover', lg: '100% 100%' }}} // Ensure no padding is affecting the width
-    >
-      <Typography variant="h4" gutterBottom sx={{textAlign: 'center', fontWeight: 'bold', mt: 5}}>
+    <Box sx={{
+      backgroundColor: 'white',
+      textAlign: 'center',
+      alignContent:'center',
+      mt: 5,
+      
+      width: '100vw',
+      padding: '20px 0',
+      overflowX: 'hidden',
+      backgroundImage: 'url("/images/why.png")',
+      backgroundSize: { xs: 'cover', lg: '80% 100%' }
+    }}>
+      <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', mt: 5 }}>
         Our Satisfied Clients Speak to Our Success
       </Typography>
       
-      <Box sx={{ padding: 1, backgroundColor: 'white', marginLeft: 12 }}>
-        <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', mt: 3, mb: 3 , ml:10}}>
-          Voice Over Services Reviews   4.9 ★★★★★ 7Reviews
+      <Box sx={{ padding: 1, backgroundColor: 'white', marginLeft: { xs: 0, sm: 2,md:0,lg:0 } }}>
+        <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', mt: 3, mb: 3, ml: { xs: 0, sm: 10 } }}>
+          Voice Over Services Reviews   4.9 ★★★★★ 7 Reviews
         </Typography>
         <Slider {...settings}>
           {reviews.map((review, index) => (

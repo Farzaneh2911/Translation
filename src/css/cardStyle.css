@@ -3,6 +3,10 @@
     filter: grayscale(100%)brightness(132%); /* Convert image to grayscale */
   }
   
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
   
   
   

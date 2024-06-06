@@ -26,7 +26,7 @@ const Translation = () => {
   const scrollToCallToAction = () => {
     if (callToActionRef.current) {
     // Scroll to the VoiceCalltoAction component
-      callToActionRef.current.scrollIntoView({ behavior: 'smooth' });
+      callToActionRef.current?.scrollIntoView({ behavior: 'smooth' });
     }  
   };
   useEffect(() => {
@@ -54,8 +54,8 @@ const Translation = () => {
           gutterBottom 
           sx={{
             fontWeight: 'bold',
-            ml: { md: 30 }, // Margin left only on md and up
-            textAlign: { xs: 'center', md: 'left', mt:5 } // Center text on small devices
+             // Margin left only on md and up
+            textAlign: { xs: 'center', md: 'center', mt:5 } // Center text on small devices
           }}
         >
           Best Document<br></br>Translations Don't Seem<br></br>Translated At All.
@@ -64,8 +64,8 @@ const Translation = () => {
           variant="subtitle1" 
           sx={{ 
             mb: 3, 
-            ml: { md: 30 }, 
-            textAlign: { xs: 'center', md: 'left' }
+            
+            textAlign: 'center'
           }}
         >
           Quality document translation services for businesses looking to<br></br>expand globally.

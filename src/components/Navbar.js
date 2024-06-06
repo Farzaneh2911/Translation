@@ -1,11 +1,10 @@
-// src/components/Navbar.js
 import React, { useState, useEffect } from 'react';
-import { AppBar, Box, Button, Container, Toolbar, Typography, Menu, MenuItem, Grid, Divider, Avatar, IconButton } from '@mui/material';
+import { AppBar, Box, Button, Container, Toolbar, Typography, Menu, MenuItem, Grid, Divider, Avatar, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { app } from '../firebaseInit'; // Ensure Firebase is initialized
-import MenuIcon from '@mui/icons-material/Menu'; // Import the menu icon
+import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const pages = ['Services', 'Company', 'Contact'];
@@ -21,6 +20,8 @@ const Navbar = () => {
   const [userMenuAnchorEl, setUserMenuAnchorEl] = useState(null);
   const [user, setUser] = useState(null);
   const [firstName, setFirstName] = useState('');
+  const [serviceMenuOpen, setServiceMenuOpen] = useState(false); // Add state for mobile services menu
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const auth = getAuth(app);
   const db = getFirestore(app);
@@ -67,6 +68,7 @@ const Navbar = () => {
       default:
         break;
     }
+    setMobileOpen(false);
   };
 
   const handleServiceClick = (category, item) => {
@@ -83,14 +85,17 @@ const Navbar = () => {
     if (category === "Audio") {
       navigate('/Voice-service');
     }
+    setMobileOpen(false);
   };
 
   const handleQuoteClick = () => {
     navigate('/quotation-request');
+    setMobileOpen(false);
   };
 
   const handleLogoClick = () => {
     navigate('/available-equipments-card');
+    setMobileOpen(false); 
   };
 
   const handleAccountClick = () => {
@@ -101,12 +106,66 @@ const Navbar = () => {
     }
   };
 
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+  const toggleServiceMenu = (e) => {
+    e.stopPropagation();
+    setServiceMenuOpen(!serviceMenuOpen);
+  };
+
+  const drawer = (
+    <Box  sx={{ textAlign: 'center' }}>
+      <img src="./images/logo.svg" alt="Company Logo" style={{ width: 120, height: 91, marginRight: '10px', cursor: 'pointer' }} onClick={handleLogoClick} />
+      <Divider />
+      <List>
+        <ListItem button onClick={toggleServiceMenu}>
+          <ListItemText primary="Services" />
+        </ListItem>
+        {serviceMenuOpen && (
+          <Box sx={{ pl: 2 }}>
+            {Object.entries(serviceCategories).map(([category, items]) => (
+              <Box key={category}>
+                <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', fontSize: 18 }}>
+                  {category}
+                </Typography>
+                <Divider sx={{ bgcolor: '#FFC729' }} />
+                {items.map((item) => (
+                  <MenuItem key={item} onClick={() => handleServiceClick(category, item)}>
+                    {item}
+                  </MenuItem>
+                ))}
+              </Box>
+            ))}
+          </Box>
+        )}
+        {pages.filter(page => page !== 'Services').map((page) => (
+          <ListItem button key={page} onClick={() => handleNavigate(page)}>
+            <ListItemText primary={page} />
+          </ListItem>
+        ))}
+        <ListItem button onClick={handleQuoteClick}>
+          <ListItemText primary="Get a Free Quote" />
+        </ListItem>
+      </List>
+    </Box>
+  );
+
   return (
     <AppBar position="sticky" color="default" sx={{ color: 'black', backgroundColor: 'white', fontWeight: 'bold' }}>
       <Container maxWidth="large">
         <Toolbar disableGutters>
-          <img src="./images/logo.svg" alt="Company Logo" style={{ width: 120, height: 91, marginRight: '10px' }} onClick={handleLogoClick} />
-          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <img src="./images/logo.svg" alt="Company Logo" style={{ width: 120, height: 91, marginRight: '10px', cursor: 'pointer' }} onClick={handleLogoClick} />
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'center' }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -167,8 +226,7 @@ const Navbar = () => {
               </Grid>
             </Menu>
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: { xs: 'none', sm: 'flex' } }}>
             <Button variant="contained" color="warning" sx={{
               textTransform: 'none',
               backgroundColor: '#FFC729',
@@ -180,7 +238,6 @@ const Navbar = () => {
               Get a Free Quote
             </Button>
           </Box>
-
           <Box sx={{ flexGrow: 0, ml: 2 }}>
             {user ? (
               <div>
@@ -200,13 +257,27 @@ const Navbar = () => {
                 </Menu>
               </div>
             ) : (
-              <IconButton onClick={handleAccountClick} sx={{color:'black' }}><AccountCircle sx={{fontSize:50}} /></IconButton>
+              <IconButton onClick={handleAccountClick} sx={{ color: 'black' }}><AccountCircle sx={{ fontSize: 50 }} /></IconButton>
             )}
           </Box>
         </Toolbar>
       </Container>
+      <Drawer
+        anchor="left"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+        }}
+      >
+        {drawer}
+      </Drawer>
     </AppBar>
   );
-}
+};
 
 export default Navbar;

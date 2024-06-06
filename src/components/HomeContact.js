@@ -29,7 +29,7 @@ const ContactForm = forwardRef((props, ref) => {
         sx={{
           backgroundImage: 'url("/images/contact.png")',
           backgroundSize: 'cover',
-          ml:{xs:1,lg:20},
+          ml:{xs:1,lg:1},
           backgroundPosition: 'center',
           padding: '20px',
           borderRadius: '12px',

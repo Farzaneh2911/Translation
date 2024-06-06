@@ -26,12 +26,11 @@ const posts = [
     imageUrl: "/images/post3.png",
     category: "Translation And Localisation"
   },
-  // Add more posts here to fill two rows of three posts each
   {
     title: "Why And How To Localise Your Marketing Assets",
     date: "May 20, 2023",
     author: "John Doe",
-    excerpt: "These days marketing starts even before a product hits the shelf. With the right marketing plan and assets in place, you can build excitement for a product before it even launches. ",
+    excerpt: "These days marketing starts even before a product hits the shelf. With the right marketing plan and assets in place, you can build excitement for a product before it even launches.",
     imageUrl: "/images/post4.png",
     category: "General"
   },
@@ -39,7 +38,7 @@ const posts = [
     title: "A Complete Guide to Remote Simultaneous Interpretation",
     date: "April 15, 2023",
     author: "Jane Smith",
-    excerpt: "If you’re organising a meeting or conference,Remote simultaneous interpretation is a great way to ensure that everyone can participate in the conversation, regardless of location. ",
+    excerpt: "If you’re organising a meeting or conference,Remote simultaneous interpretation is a great way to ensure that everyone can participate in the conversation, regardless of location.",
     imageUrl: "/images/post5.png",
     category: "Localization"
   },
@@ -55,8 +54,8 @@ const posts = [
 
 const LatestPosts = () => {
   return (
-    <Box sx={{ flexGrow: 3, p: 25,paddingTop:5, mt:0 }}> {/* optional background color */}
-      <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', mt: 5, mb: 4 }}>
+    <Box sx={{ flexGrow: 3, p: { xs: 2, md: 10 }, paddingTop: 1, mt: 0 }}> {/* Adjust padding for different screen sizes */}
+      <Typography variant="h4" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', mt: 1, mb: 1 }}>
         Our Latest Posts
       </Typography>
       <Grid container spacing={4} justifyContent="center">
