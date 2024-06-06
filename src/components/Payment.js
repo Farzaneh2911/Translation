@@ -177,7 +177,7 @@ const styles1 = {
                     <Grid item xs={12} sm={6}>
                         <Box style={styles.imageContainer}>
                             {/* Image component or image tag */}
-                            <img src="/images/payments.gif" alt="Payment" style={styles.image} />
+                            <img src="/images/Payments.gif" alt="Payment" style={styles.image} />
                         </Box>
                     </Grid>
                     <Box style={styles.pageContainer}>
@@ -194,7 +194,7 @@ const styles1 = {
                               <div style={styles1.paymentDetails}>
                                 Pay using Credit Card
                                 <br />
-                                <img src="/images/Paymentlogos.png" alt="Credit Cards" style={{marginTop: '10px'}} />
+                                <img src="/images/paymentlogos.png" alt="Credit Cards" style={{marginTop: '10px'}} />
                               </div>
                              </div>
 

@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,forwardRef } from 'react';
 import { Box, Container, TextField, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-const ContactForm = () => {
+const ContactForm = forwardRef((props, ref) => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0); // This ensures that the page will scroll to the top on navigation
+  };
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -25,6 +32,7 @@ const ContactForm = () => {
   return (
     <Container maxWidth="md" style={{ padding: '50px 0' }}>
       <Box 
+      ref={ref}
         sx={{
           backgroundImage: 'url("/images/contact.png")',
           backgroundSize: 'cover',
@@ -97,6 +105,6 @@ const ContactForm = () => {
       </Box>
     </Container>
   );
-};
+});
 
 export default ContactForm;

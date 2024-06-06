@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useRef } from 'react';
 import { Box, Container, Typography, Button, useMediaQuery, useTheme } from '@mui/material';
 import LogoSlider from './Logoslider';
 import LocalizationFeature from './Localizationfeature';
@@ -77,10 +77,14 @@ const styles1 = (isMobile) => ({
 const LocalizationServicePage = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
+  const ContactFormRef = useRef(null);
   const appliedStyles = styles(theme, isMobile);
   const appliedStyles1 = styles1(isMobile);
-
+  const scrollToContactForm  = () => {
+    if (ContactFormRef.current) {
+      ContactFormRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <Box>
       <Box style={appliedStyles.heroContainer}>
@@ -92,7 +96,7 @@ const LocalizationServicePage = () => {
             <Typography variant="h5">
               Translated brings top-performing linguists and AI-powered localization tools together to help companies gain a superior understanding of their customers worldwide and achieve a remarkable return on investment.
             </Typography>
-            <Button variant="contained" color="primary" sx={appliedStyles.localizeButton}>
+            <Button variant="contained" onClick={scrollToContactForm}color="primary" sx={appliedStyles.localizeButton}>
               Localize with us 
             </Button>
           </Box>
@@ -124,7 +128,7 @@ const LocalizationServicePage = () => {
       <br />
       <LocalizationFeature3 />
       <br />
-      <ContactForm />
+      <ContactForm ref={ContactFormRef}/>
     </Box>
   );
 };

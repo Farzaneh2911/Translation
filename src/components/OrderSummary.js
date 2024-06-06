@@ -80,7 +80,7 @@ const OrderSummary = () => {
     <Container maxWidth="xl" sx={{ mt: 5 }}>
       <Grid container spacing={0} sx={{ display: 'flex', alignItems: 'stretch' }}>
         <Grid item xs={12} md={6}>
-          <Card raised sx={{ p: 3, display: 'flex', flexDirection: 'column', height: '90%' }}>
+          <Card raised sx={{ p: 3, display: 'flex', flexDirection: 'column', height: '100%' }}>
             <CardContent sx={{ flexGrow: 1 }}>
               <Box display="flex" justifyContent="space-between" alignItems="center">
                 <Typography variant="h5" component="h2" gutterBottom>
